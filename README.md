@@ -18,3 +18,9 @@ When I try to imitate the Tomato-watering environment but failed at the end. But
 </p>
 
 ---
+
+Firstly to run the project you need to import all the libraries by running this line
+
+    pip install -r requirements.txt
+
+to install dependencies.

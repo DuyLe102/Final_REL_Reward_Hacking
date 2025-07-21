@@ -3,9 +3,9 @@ This resporitory is inspired form the paper "[Correlated Proxies: A New Definiti
 
 When I try to imitate the Tomato-watering environment but failed at the end. But then I use it as a reference and build an environment called ```Simplified_tomato_env```
 
-### 🧩 Environment Constants
+###  Environment Constants
 
-#### 🟫 Tile Types (States)
+####  Tile Types (States)
 | Constant  | Value | Description     |
 |-----------|--------|-----------------|
 | `EMPTY`   | 0      | Empty tile      |
@@ -15,7 +15,7 @@ When I try to imitate the Tomato-watering environment but failed at the end. But
 | `DRY`     | 4      | Dry tomato      |
 | `WALL`    | 5      | Wall / obstacle |
 
-#### 🎮 Actions
+####  Actions
 | Constant | Value | Description      |
 |----------|--------|------------------|
 | `RIGHT`  | 0      | Move right       |
@@ -30,7 +30,7 @@ So there would be two cases: one is the agent 'try-hard' to water all the tomato
 
 ---
 
-## 🖼️ Visual Comparison
+## 🖼 Visual Comparison
 
 ### The original tomato_environment from the paper
 <p align="center">
@@ -54,21 +54,21 @@ to install dependencies.
 Next, you only need to run `simplyfied_tomato_env.py` file in the `env` folder in order to create the environment
 
 
-## 🏋️ PPO Training Summary
+##  PPO Training Summary
 
 The script [`train.py`](./train.py) trains PPO agents in `SimplifiedTomatoEnv` using either:
 
 - **Proxy reward** (may lead to reward hacking)
 - **True reward** (aligned with actual goal)
 
-### 🔧 Notes:
+###  Notes:
 - Models are saved as:
   - `ppo_tomato_proxy.zip`
   - `ppo_tomato_true.zip`
 - Training takes ~1–3 minutes depending on hardware and timesteps.
 - Uses `MultiInputPolicy` to handle complex observation space.
 
-### 📤 Output:
+###  Output:
 For each training phase:
 - PPO logs training progress (episode reward, loss, entropy, etc.)
 - Final model saved with `model.save(...)` and confirmation message:
@@ -78,9 +78,27 @@ Model saved as ppo_tomato_proxy.zip
 Model saved as ppo_tomato_true.zip
 ```
 
-##  Model Evaluation Summary
+##  Model Evaluation
 
-The script [`evaluate.py`](./evaluate.py) tests two PPO models on `SimplifiedTomatoEnv`:
+The script [`evaluate.py`](./evaluate.py) loads trained PPO agents and evaluates their performance in the `SimplifiedTomatoEnv`.
 
-- `ppo_tomato_proxy`: trained with **proxy reward**
-- `ppo_tomato_true`: trained with **true reward**
+###  Evaluation Process
+
+Evaluates both models:
+
+- `ppo_tomato_proxy` (trained with **proxy reward**)
+- `ppo_tomato_true` (trained with **true reward**)
+
+Runs each model over **10 episodes**.
+
+Collects and displays:
+
+- ✅ Total reward per episode  
+- 🍅 Number of tomatoes successfully watered  
+- 🪣 Whether the agent visited the water bucket  
+
+Outputs:
+
+- 📈 **Average reward**
+- 🍅 **Average number of tomatoes watered**
+- 🪣 **Bucket visit rate** across all episodes

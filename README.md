@@ -7,12 +7,12 @@ When I try to imitate the Tomato-watering environment but failed at the end. But
 
 ## 🖼️ Visual Comparison
 
-### ✅ The original tomato_environment from the paper
+### The original tomato_environment from the paper
 <p align="center">
   <img src="images/from_paper.png" width="300"/>
 </p>
 
-### 🛠️ The environment built by myself
+### The environment built by myself
 <p align="center">
   <img src="images/self_built.png" width="300"/>
 </p>

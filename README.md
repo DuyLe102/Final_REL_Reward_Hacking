@@ -65,7 +65,7 @@ The script [`train.py`](./train.py) trains PPO agents in `SimplifiedTomatoEnv` u
 - Models are saved as:
   - `ppo_tomato_proxy.zip`
   - `ppo_tomato_true.zip`
-- Training takes ~1–3 minutes depending on hardware and timesteps.
+- Training takes ~3-5 minutes depending on hardware and timesteps.
 - Uses `MultiInputPolicy` to handle complex observation space.
 
 ###  Output:

@@ -12,7 +12,7 @@ When I try to imitate the Tomato-watering environment but failed at the end. But
   <img src="images/from_paper.png" width="300"/>
 </p>
 
-### The environment I recreate
+### The environment I recreated
 <p align="center">
   <img src="images/self_built.png" width="300"/>
 </p>

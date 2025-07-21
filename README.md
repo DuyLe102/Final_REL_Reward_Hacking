@@ -54,6 +54,33 @@ to install dependencies.
 Next, you only need to run `simplyfied_tomato_env.py` file in the `env` folder in order to create the environment
 
 
-##Training Process
-By running the `train_ppo.py` file in the `training` folder you can train the agent with PPO
-Next, you can use the `compare.py` file in the same folder to 
+## 🏋️ PPO Training Summary
+
+The script [`train.py`](./train.py) trains PPO agents in `SimplifiedTomatoEnv` using either:
+
+- **Proxy reward** (may lead to reward hacking)
+- **True reward** (aligned with actual goal)
+
+### 🔧 Notes:
+- Models are saved as:
+  - `ppo_tomato_proxy.zip`
+  - `ppo_tomato_true.zip`
+- Training takes ~1–3 minutes depending on hardware and timesteps.
+- Uses `MultiInputPolicy` to handle complex observation space.
+
+### 📤 Output:
+For each training phase:
+- PPO logs training progress (episode reward, loss, entropy, etc.)
+- Final model saved with `model.save(...)` and confirmation message:
+
+```bash
+Model saved as ppo_tomato_proxy.zip
+Model saved as ppo_tomato_true.zip
+```
+
+##  Model Evaluation Summary
+
+The script [`evaluate.py`](./evaluate.py) tests two PPO models on `SimplifiedTomatoEnv`:
+
+- `ppo_tomato_proxy`: trained with **proxy reward**
+- `ppo_tomato_true`: trained with **true reward**

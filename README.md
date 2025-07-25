@@ -1,7 +1,7 @@
 # Final_REL_Reward_Hacking
 This resporitory is inspired by the paper "[Correlated Proxies: A New Definition and Improved Mitigation for Reward Hacking](https://arxiv.org/abs/2403.03185)".
 
-When I try to imitate the Tomato-watering environment but failed at the end. But then I use it as a reference and build an environment called ```Simplified_tomato_env```
+At first, I tried to imitate the Tomato-watering environment but failed at the end. But then I used it as a reference and build an environment on my own called ```Simplified_tomato_env```
 
 ###  Environment Constants
 
